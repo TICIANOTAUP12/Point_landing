@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Layers, Brain, Link2, ChevronRight } from "lucide-react";
+import { serviceMessage, whatsappUrl } from "../../lib/whatsapp";
 
 const solutions = [
   {
@@ -169,7 +170,9 @@ export function Solutions() {
 
             <div className="pt-2">
               <a
-                href="#contacto"
+                href={whatsappUrl(serviceMessage(sol.id))}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-sm transition-all duration-200 hover:bg-white/[0.04]"
                 style={{
                   borderColor: `${sol.accent}40`,
@@ -270,7 +273,7 @@ export function Solutions() {
                             className="text-[10px] text-[#4F46E5] block mb-1.5"
                             style={{ fontFamily: "'JetBrains Mono', monospace" }}
                           >
-                            TAUP_AI
+                            AGENCIA_TA_AI
                           </span>
                         )}
                         {msg.msg}
@@ -320,7 +323,9 @@ export function Solutions() {
                 ¿Necesitás este tipo de solución? Contanos tu caso y te respondemos con una propuesta técnica en 48 horas.
               </p>
               <a
-                href="#contacto"
+                href={whatsappUrl(serviceMessage(sol.id))}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-white hover:text-[#93c5fd] transition-colors"
                 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}
               >

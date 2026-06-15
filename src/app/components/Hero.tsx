@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronRight, TrendingUp, AlertCircle, Clock } from "lucide-react";
+import { AGENCIA_LOCATION, WhatsAppMessages, whatsappUrl } from "../../lib/whatsapp";
 
 const codeSnippet = [
-  { tokens: [{ t: "const", c: "keyword" }, { t: " pipeline", c: "var" }, { t: " = ", c: "op" }, { t: "await", c: "keyword" }, { t: " taup", c: "obj" }, { t: ".", c: "op" }, { t: "deploy", c: "fn" }, { t: "({", c: "bracket" }] },
+  { tokens: [{ t: "const", c: "keyword" }, { t: " pipeline", c: "var" }, { t: " = ", c: "op" }, { t: "await", c: "keyword" }, { t: " agenciaTA", c: "obj" }, { t: ".", c: "op" }, { t: "deploy", c: "fn" }, { t: "({", c: "bracket" }] },
   { tokens: [{ t: "  stack", c: "key" }, { t: ": ", c: "op" }, { t: "'microservices'", c: "str" }, { t: ",", c: "op" }] },
   { tokens: [{ t: "  scale", c: "key" }, { t: ": ", c: "op" }, { t: "'auto'", c: "str" }, { t: ",", c: "op" }] },
   { tokens: [{ t: "  latency", c: "key" }, { t: ": ", c: "op" }, { t: "'<50ms'", c: "str" }, { t: ",", c: "op" }] },
@@ -45,7 +46,7 @@ function CodePanel() {
         <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
         <div className="w-3 h-3 rounded-full bg-[#28C840]" />
         <span className="ml-3 text-[#374151] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          taup_pipeline.ts
+          ta_pipeline.ts
         </span>
         <span className="ml-auto text-[10px] text-[#1d4ed8] bg-[#1d4ed8]/10 px-2 py-0.5 rounded border border-[#1d4ed8]/20">
           PROD
@@ -135,7 +136,7 @@ export function Hero() {
               className="text-xs text-[#60a5fa]"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
-              Software Factory — Buenos Aires, ARG
+              Software Factory — {AGENCIA_LOCATION}
             </span>
           </div>
 
@@ -165,7 +166,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://calendly.com"
+              href={whatsappUrl(WhatsAppMessages.audit)}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#2563EB] text-white hover:bg-[#1d4ed8] transition-all duration-200 hover:shadow-[0_0_35px_rgba(37,99,235,0.5)]"

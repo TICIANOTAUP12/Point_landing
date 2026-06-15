@@ -1,5 +1,21 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { AGENCIA_NAME, WhatsAppMessages, whatsappUrl } from "../../lib/whatsapp";
+
+const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`;
+
+function BrandIcon({ size = 28 }: { size?: number }) {
+  return (
+    <img
+      src={LOGO_SRC}
+      alt={AGENCIA_NAME}
+      width={size}
+      height={size}
+      className="object-contain shrink-0"
+      style={{ display: "block", background: "transparent" }}
+    />
+  );
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,6 +28,7 @@ export function Navbar() {
   }, []);
 
   const links = ["Soluciones", "Tecnología", "Casos", "Contacto"];
+  const meetingUrl = whatsappUrl(WhatsAppMessages.meeting);
 
   return (
     <nav
@@ -23,10 +40,10 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-7 h-7 rounded-md bg-[#2563EB] flex items-center justify-center shadow-[0_0_16px_rgba(37,99,235,0.6)]">
-            <span className="text-white text-xs font-bold" style={{ fontFamily: "'JetBrains Mono', monospace" }}>T</span>
-          </div>
-          <span className="text-white font-bold tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>TAUP</span>
+          <BrandIcon size={30} />
+          <span className="text-white font-bold tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            {AGENCIA_NAME}
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -48,10 +65,12 @@ export function Navbar() {
             className="text-sm text-[#9CA3AF] hover:text-white transition-colors"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
-            Iniciar sesión
+            Contacto
           </a>
           <a
-            href="#contacto"
+            href={meetingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg bg-[#2563EB] text-white text-sm hover:bg-[#1d4ed8] transition-all duration-200 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
@@ -81,9 +100,12 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href={meetingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 px-4 py-2 rounded-lg bg-[#2563EB] text-white text-sm text-center hover:bg-[#1d4ed8] transition-all"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            onClick={() => setMenuOpen(false)}
           >
             Agendar llamada
           </a>

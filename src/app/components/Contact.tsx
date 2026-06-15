@@ -1,17 +1,29 @@
 import { useState } from "react";
-import { ArrowRight, Calendar, Mail, MessageSquare } from "lucide-react";
+import { ArrowRight, Calendar, MessageSquare } from "lucide-react";
+import {
+  AGENCIA_LOCATION,
+  AGENCIA_NAME,
+  WHATSAPP_DISPLAY,
+  WhatsAppMessages,
+  whatsappUrl,
+} from "../../lib/whatsapp";
 
 export function Contact() {
   const [form, setForm] = useState({
     nombre: "",
     empresa: "",
-    email: "",
     cuello: "",
   });
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const message = WhatsAppMessages.diagnostic(
+      form.nombre.trim(),
+      form.empresa.trim(),
+      form.cuello.trim(),
+    );
+    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
     setSent(true);
   };
 
@@ -59,27 +71,30 @@ export function Contact() {
                 icon: Calendar,
                 label: "Llamada de diagnóstico",
                 sub: "30 minutos con un ingeniero senior. Sin ventas, solo análisis.",
-              },
-              {
-                icon: Mail,
-                label: "hola@taup.dev",
-                sub: "Respondemos en menos de 24 horas hábiles.",
+                href: whatsappUrl(WhatsAppMessages.audit),
               },
               {
                 icon: MessageSquare,
                 label: "WhatsApp Business",
-                sub: "+54 11 0000-0000 — Para consultas urgentes.",
+                sub: `${WHATSAPP_DISPLAY} — ${AGENCIA_LOCATION}. Respuesta en menos de 24 h.`,
+                href: whatsappUrl(WhatsAppMessages.meeting),
               },
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/[0.10] border border-[#2563EB]/20 flex items-center justify-center shrink-0">
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/[0.10] border border-[#2563EB]/20 flex items-center justify-center shrink-0 group-hover:bg-[#2563EB]/20 transition-colors">
                     <Icon size={16} className="text-[#60a5fa]" />
                   </div>
                   <div>
                     <span
-                      className="text-sm text-white block"
+                      className="text-sm text-white block group-hover:text-[#93c5fd] transition-colors"
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 600 }}
                     >
                       {item.label}
@@ -91,7 +106,7 @@ export function Contact() {
                       {item.sub}
                     </span>
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>
@@ -109,13 +124,13 @@ export function Contact() {
                   className="text-white mb-2"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}
                 >
-                  Diagnóstico iniciado
+                  Mensaje enviado por WhatsApp
                 </h3>
                 <p
                   className="text-sm text-[#9CA3AF] max-w-xs"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
-                  Un ingeniero de TAUP va a contactarte en las próximas 24 horas
+                  Un ingeniero de {AGENCIA_NAME} te va a responder en las próximas 24 horas
                   hábiles para coordinar la auditoría técnica.
                 </p>
               </div>
@@ -133,14 +148,14 @@ export function Contact() {
                   className="text-xs text-[#6B7280] mt-1"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
-                  Completá el formulario y un ingeniero te contacta en 24 horas.
+                  Completá el formulario y te redirigimos a WhatsApp para coordinar con un ingeniero.
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { field: "nombre", label: "Nombre completo", placeholder: "Juan García" },
-                  { field: "empresa", label: "Empresa", placeholder: "García S.A." },
+                  { field: "nombre" as const, label: "Nombre completo", placeholder: "Juan García" },
+                  { field: "empresa" as const, label: "Empresa", placeholder: "García S.A." },
                 ].map(({ field, label, placeholder }) => (
                   <div key={field} className="flex flex-col gap-1.5">
                     <label
@@ -152,7 +167,7 @@ export function Contact() {
                     <input
                       type="text"
                       placeholder={placeholder}
-                      value={(form as any)[field]}
+                      value={form[field]}
                       onChange={(e) => setForm({ ...form, [field]: e.target.value })}
                       required
                       className="px-3 py-2.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] transition-all"
@@ -160,24 +175,6 @@ export function Contact() {
                     />
                   </div>
                 ))}
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label
-                  className="text-xs text-[#6B7280]"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                >
-                  Mail corporativo
-                </label>
-                <input
-                  type="email"
-                  placeholder="juan@garcia.com.ar"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                  className="px-3 py-2.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] transition-all"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-                />
               </div>
 
               <div className="flex flex-col gap-1.5">

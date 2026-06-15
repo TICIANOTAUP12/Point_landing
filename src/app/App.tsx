@@ -1,11 +1,8 @@
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Pain } from "./components/Pain";
-import { Solutions } from "./components/Solutions";
-import { TechStack } from "./components/TechStack";
-import { Cases } from "./components/Cases";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { HomePage } from "./pages/HomePage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
 
 export default function App() {
   return (
@@ -17,14 +14,12 @@ export default function App() {
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.14); }
       `}</style>
-      <Navbar />
-      <Hero />
-      <Pain />
-      <Solutions />
-      <TechStack />
-      <Cases />
-      <Contact />
-      <Footer />
+      <BrowserRouter basename={routerBasename}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/politica-de-privacidad" element={<PrivacyPolicyPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
