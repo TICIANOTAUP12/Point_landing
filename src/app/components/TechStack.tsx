@@ -53,7 +53,7 @@ export function TechStack() {
   return (
     <section id="tecnología" className="relative py-32 border-t border-white/[0.04] ta-section-surface--alt">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[#2563EB]/[0.04] blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full ta-glow-spot" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">

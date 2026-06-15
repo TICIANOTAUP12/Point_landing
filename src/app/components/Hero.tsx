@@ -142,10 +142,10 @@ export function Hero() {
               <br />y Automatización
               <br />para{" "}
               <span className="relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#818cf8]">
+                <span className="ta-gradient-text bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#818cf8]">
                   Escalar tu Operación.
                 </span>
-                <span className="absolute -inset-2 bg-gradient-to-r from-[#2563EB]/15 to-[#4F46E5]/15 blur-2xl rounded-xl pointer-events-none" />
+                <span className="absolute -inset-2 rounded-xl pointer-events-none ta-hero-glow" aria-hidden="true" />
               </span>
             </h1>
             <p

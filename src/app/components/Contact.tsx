@@ -51,7 +51,7 @@ export function Contact() {
               <br />
               arquitectura que
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
+              <span className="ta-gradient-text bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
                 tu empresa necesita.
               </span>
             </h2>

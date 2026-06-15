@@ -78,7 +78,7 @@ export function Solutions() {
   return (
     <section id="soluciones" className="relative py-32 border-t border-white/[0.04] ta-section-surface">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#4F46E5]/[0.035] blur-[140px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full ta-glow-spot ta-glow-spot--indigo" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -96,7 +96,7 @@ export function Solutions() {
             No vendemos plantillas.
             <br />
             Construimos{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
+            <span className="ta-gradient-text bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
               arquitecturas a medida.
             </span>
           </h2>

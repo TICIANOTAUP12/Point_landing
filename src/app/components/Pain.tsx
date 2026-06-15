@@ -28,7 +28,7 @@ export function Pain() {
   return (
     <section className="relative py-32 border-t border-white/[0.04] ta-section-surface--alt">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#ef4444]/[0.03] blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full ta-glow-spot ta-glow-spot--red" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
