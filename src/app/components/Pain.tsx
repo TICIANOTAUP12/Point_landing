@@ -26,7 +26,7 @@ const pains = [
 
 export function Pain() {
   return (
-    <section className="relative py-32 border-t border-white/[0.04]">
+    <section className="relative py-32 border-t border-white/[0.04] ta-section-surface--alt">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#ef4444]/[0.03] blur-[120px] rounded-full" />
       </div>
@@ -62,7 +62,7 @@ export function Pain() {
             return (
               <div
                 key={p.title}
-                className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.025] p-7 hover:border-white/[0.10] transition-all duration-300 overflow-hidden"
+                className="group relative rounded-2xl ta-card ta-card--interactive p-7 overflow-hidden"
               >
                 <div
                   className="absolute top-0 left-0 right-0 h-px opacity-60"

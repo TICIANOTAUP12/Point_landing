@@ -39,7 +39,7 @@ function CodePanel() {
   }, [visibleLines]);
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0D0D0F] shadow-[0_0_80px_rgba(37,99,235,0.12)]">
+    <div className="relative rounded-2xl overflow-hidden ta-card ta-card--solid shadow-[0_0_80px_rgba(37,99,235,0.12)]">
       {/* window chrome */}
       <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-[#111116]">
         <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
@@ -84,7 +84,7 @@ function CodePanel() {
 function DashboardPanel() {
   const bars = [68, 82, 55, 91, 74, 88, 62, 95, 71, 84, 79, 93];
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-[#0D0D0F] mt-4">
+    <div className="relative rounded-2xl overflow-hidden ta-card ta-card--solid mt-4">
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.05]">
         <span className="text-xs text-[#4B5563]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>[DASHBOARD_OPERATIVO]</span>
         <span className="text-[10px] text-[#059669] flex items-center gap-1">

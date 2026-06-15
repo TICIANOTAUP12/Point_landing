@@ -67,7 +67,7 @@ export function Cases() {
   const CIcon = c.icon;
 
   return (
-    <section id="casos" className="relative py-32 border-t border-white/[0.04]">
+    <section id="casos" className="relative py-32 border-t border-white/[0.04] ta-section-surface">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-[#4F46E5]/[0.04] blur-[130px] rounded-full" />
       </div>
@@ -120,7 +120,7 @@ export function Cases() {
 
         {/* Case detail */}
         <div className="grid lg:grid-cols-[1fr_300px] gap-6">
-          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-8 flex flex-col gap-6">
+          <div className="rounded-2xl ta-card p-8 flex flex-col gap-6">
             <div className="flex items-start gap-3">
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
@@ -183,7 +183,7 @@ export function Cases() {
               {c.stack.map((t) => (
                 <span
                   key={t}
-                  className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-xs text-[#6B7280]"
+                  className="px-2.5 py-1 rounded-md ta-card-chip text-xs text-[#6B7280]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {t}
@@ -197,7 +197,7 @@ export function Cases() {
             {c.metrics.map((m) => (
               <div
                 key={m.label}
-                className="flex-1 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-6 flex flex-col justify-between gap-3"
+                className="flex-1 rounded-2xl ta-card p-6 flex flex-col justify-between gap-3"
               >
                 <span
                   className="text-xs text-[#6B7280] leading-snug"

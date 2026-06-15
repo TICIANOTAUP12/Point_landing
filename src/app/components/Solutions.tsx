@@ -76,7 +76,7 @@ export function Solutions() {
   const Icon = sol.icon;
 
   return (
-    <section id="soluciones" className="relative py-32 border-t border-white/[0.04]">
+    <section id="soluciones" className="relative py-32 border-t border-white/[0.04] ta-section-surface">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#4F46E5]/[0.035] blur-[140px] rounded-full" />
       </div>
@@ -126,7 +126,7 @@ export function Solutions() {
 
         {/* Detail panel */}
         <div className="grid lg:grid-cols-[1fr_420px] gap-6 items-start">
-          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-8 flex flex-col gap-6">
+          <div className="rounded-2xl ta-card p-8 flex flex-col gap-6">
             <div className="flex items-start gap-4">
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
@@ -190,8 +190,8 @@ export function Solutions() {
           {/* Right mockup */}
           <div className="flex flex-col gap-4">
             {sol.id === "erp" && sol.mockup && (
-              <div className="rounded-2xl border border-white/[0.07] bg-[#0D0D0F] overflow-hidden">
-                <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.05]">
+              <div className="rounded-2xl ta-card ta-card--solid overflow-hidden">
+                <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
                   <span className="text-xs text-[#4B5563]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     {sol.mockup.title}
                   </span>
@@ -247,8 +247,8 @@ export function Solutions() {
             )}
 
             {sol.id === "ia" && sol.mockup && (
-              <div className="rounded-2xl border border-white/[0.07] bg-[#0D0D0F] overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.05]">
+              <div className="rounded-2xl ta-card ta-card--solid overflow-hidden">
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
                   <div className="w-2 h-2 rounded-full bg-[#4F46E5] animate-pulse" />
                   <span className="text-xs text-[#4B5563]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                     {sol.mockup.title}
@@ -285,7 +285,7 @@ export function Solutions() {
             )}
 
             {sol.id === "integracion" && (
-              <div className="rounded-2xl border border-white/[0.07] bg-[#0D0D0F] p-6 flex flex-col gap-4">
+              <div className="rounded-2xl ta-card ta-card--solid p-6 flex flex-col gap-4">
                 <span className="text-xs text-[#4B5563]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                   [INTEGRACIONES_ACTIVAS]
                 </span>
@@ -300,7 +300,7 @@ export function Solutions() {
                   ].map((item) => (
                     <div
                       key={item.name}
-                      className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-white/[0.03] border border-white/[0.06]"
+                      className="flex items-center justify-between px-3 py-2.5 rounded-lg ta-card-chip"
                     >
                       <span className="text-xs text-[#9CA3AF]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                         {item.name}
@@ -318,7 +318,7 @@ export function Solutions() {
             )}
 
             {/* CTA card */}
-            <div className="rounded-2xl border border-[#2563EB]/20 bg-[#2563EB]/[0.06] p-5 flex flex-col gap-3">
+            <div className="rounded-2xl ta-card border-[#2563EB]/25 bg-[#2563EB]/[0.08] p-5 flex flex-col gap-3">
               <p className="text-sm text-[#93c5fd] leading-relaxed" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                 ¿Necesitás este tipo de solución? Contanos tu caso y te respondemos con una propuesta técnica en 48 horas.
               </p>

@@ -5,7 +5,7 @@ const LOGO_SRC = `${import.meta.env.BASE_URL}logo.png`;
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.04] py-12">
+    <footer className="border-t border-white/[0.04] py-12 ta-section-surface--alt">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2.5">
           <img

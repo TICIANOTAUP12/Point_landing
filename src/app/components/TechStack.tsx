@@ -51,7 +51,7 @@ const categories = [
 
 export function TechStack() {
   return (
-    <section id="tecnología" className="relative py-32 border-t border-white/[0.04]">
+    <section id="tecnología" className="relative py-32 border-t border-white/[0.04] ta-section-surface--alt">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-[#2563EB]/[0.04] blur-[120px] rounded-full" />
       </div>
@@ -85,7 +85,7 @@ export function TechStack() {
               que en seis meses quedan obsoletas.
             </p>
 
-            <div className="mt-2 p-5 rounded-2xl border border-white/[0.07] bg-white/[0.025] flex flex-col gap-3">
+            <div className="mt-2 p-5 rounded-2xl ta-card flex flex-col gap-3">
               <span
                 className="text-[10px] text-[#4B5563]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
@@ -134,7 +134,7 @@ export function TechStack() {
                   {cat.techs.map((t) => (
                     <span
                       key={t}
-                      className="px-3 py-1.5 rounded-lg border border-white/[0.07] bg-white/[0.03] text-sm text-[#D1D5DB] hover:border-white/[0.13] hover:bg-white/[0.05] transition-all duration-150 cursor-default"
+                      className="px-3 py-1.5 rounded-lg ta-card-chip ta-card--interactive text-sm text-[#D1D5DB] hover:border-white/[0.14] cursor-default"
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                     >
                       {t}

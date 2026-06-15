@@ -28,9 +28,9 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="relative py-32 border-t border-white/[0.04]">
-      <div className="absolute inset-0 pointer-events-none ta-mesh-bg opacity-90">
-        <div className="absolute inset-0 ta-mesh-bg__grid opacity-30" />
+    <section id="contacto" className="relative py-32 border-t border-white/[0.04] ta-section-surface">
+      <div className="absolute inset-0 pointer-events-none ta-mesh-bg opacity-50">
+        <div className="absolute inset-0 ta-mesh-bg__grid opacity-20" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
@@ -113,7 +113,7 @@ export function Contact() {
         </div>
 
         {/* Right: form */}
-        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm p-8">
+        <div className="rounded-2xl ta-card p-8">
           {sent ? (
             <div className="flex flex-col items-center justify-center gap-5 py-16 text-center">
               <div className="w-16 h-16 rounded-full bg-[#2563EB]/15 border border-[#2563EB]/30 flex items-center justify-center">
@@ -170,7 +170,7 @@ export function Contact() {
                       value={form[field]}
                       onChange={(e) => setForm({ ...form, [field]: e.target.value })}
                       required
-                      className="px-3 py-2.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] transition-all"
+                      className="px-3 py-2.5 rounded-lg ta-card-chip text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-[#111116] transition-all"
                       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                     />
                   </div>
@@ -190,7 +190,7 @@ export function Contact() {
                   onChange={(e) => setForm({ ...form, cuello: e.target.value })}
                   rows={4}
                   required
-                  className="px-3 py-2.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] transition-all resize-none"
+                  className="px-3 py-2.5 rounded-lg ta-card-chip text-sm text-white placeholder-[#374151] focus:outline-none focus:border-[#2563EB]/50 focus:bg-[#111116] transition-all resize-none"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 />
               </div>
