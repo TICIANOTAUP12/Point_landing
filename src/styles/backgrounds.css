@@ -1,0 +1,27 @@
+/* Agencia TA — dark mesh backdrop (no heavy blur / stock photos) */
+.ta-mesh-bg {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -15%, rgba(37, 99, 235, 0.18), transparent 58%),
+    radial-gradient(ellipse 45% 40% at 100% 35%, rgba(79, 70, 229, 0.1), transparent 55%),
+    radial-gradient(ellipse 40% 35% at 0% 70%, rgba(37, 99, 235, 0.07), transparent 50%),
+    linear-gradient(180deg, #0d1117 0%, #0a0a0a 42%, #070708 100%);
+}
+
+.ta-mesh-bg__grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 35%, #000 15%, transparent 72%);
+  opacity: 0.45;
+}
+
+.ta-mesh-bg__noise {
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.ta-mesh-bg__accent {
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.35), transparent);
+}

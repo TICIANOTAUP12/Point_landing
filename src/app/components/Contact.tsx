@@ -29,8 +29,8 @@ export function Contact() {
 
   return (
     <section id="contacto" className="relative py-32 border-t border-white/[0.04]">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#2563EB]/[0.07] blur-[130px] rounded-full" />
+      <div className="absolute inset-0 pointer-events-none ta-mesh-bg opacity-90">
+        <div className="absolute inset-0 ta-mesh-bg__grid opacity-30" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">

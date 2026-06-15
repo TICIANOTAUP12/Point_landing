@@ -113,18 +113,11 @@ function DashboardPanel() {
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full bg-[#2563EB]/[0.06] blur-[140px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#4F46E5]/[0.05] blur-[110px]" />
-        <div
-          className="absolute inset-0 opacity-[0.018]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
+      {/* Background — crisp mesh gradient (no heavy blur blobs) */}
+      <div className="absolute inset-0 pointer-events-none ta-mesh-bg">
+        <div className="absolute inset-0 ta-mesh-bg__grid" />
+        <div className="absolute inset-0 ta-mesh-bg__noise" />
+        <div className="absolute top-0 inset-x-0 h-px ta-mesh-bg__accent opacity-60" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-28 grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
