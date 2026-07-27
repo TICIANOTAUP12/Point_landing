@@ -9,3 +9,11 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+interface Window {
+  fbq?: (
+    command: string,
+    eventNameOrId?: string,
+    params?: Record<string, string | number | boolean>,
+  ) => void;
+}

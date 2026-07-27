@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { HomePage } from "./pages/HomePage";
+import { FacturacionAfipPage } from "./pages/FacturacionAfipPage";
 import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
@@ -17,6 +18,7 @@ export default function App() {
       <BrowserRouter basename={routerBasename}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/facturacion-afip" element={<FacturacionAfipPage />} />
           <Route path="/politica-de-privacidad" element={<PrivacyPolicyPage />} />
         </Routes>
       </BrowserRouter>

@@ -30,6 +30,12 @@ export const WhatsAppMessages = {
   serviceIntegracion:
     "Hola, necesito integrar mi sistema con AFIP, pagos u otros servicios. Me contacto desde Agencia TA para consultar sobre integración de ecosistemas.",
 
+  afipIntegracion:
+    "Hola, me interesa la facturación electrónica AFIP / ARCA con Agencia TA. Quisiera saber cómo integrarla a mi sistema (o armarla a medida si todavía no tengo gestión) y monitorear los comprobantes.",
+
+  pointSales:
+    "Hola, me interesa Point Sales (sistema de caja y stock) de Agencia TA. Quisiera conocer combos, precios y cómo implementarlo en mi comercio.",
+
   diagnostic: (nombre: string, empresa: string, cuello: string): string =>
     [
       "Hola, soy " + nombre + (empresa ? ` de ${empresa}` : "") + ".",

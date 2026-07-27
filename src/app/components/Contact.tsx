@@ -23,6 +23,12 @@ export function Contact() {
       form.empresa.trim(),
       form.cuello.trim(),
     );
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: "diagnostico_contacto",
+        content_category: "contacto",
+      });
+    }
     window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
     setSent(true);
   };

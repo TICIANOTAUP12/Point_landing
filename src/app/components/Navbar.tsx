@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
 import { AGENCIA_NAME, WhatsAppMessages, whatsappUrl } from "../../lib/whatsapp";
 
@@ -17,6 +18,8 @@ function BrandIcon({ size = 28 }: { size?: number }) {
   );
 }
 
+type NavLink = { href: string; label: string; isRoute?: boolean };
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,8 +30,32 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const links = ["Soluciones", "Tecnología", "Casos", "Contacto"];
+  const links: NavLink[] = [
+    { href: "/facturacion-afip", label: "AFIP / ARCA", isRoute: true },
+    { href: "#soluciones", label: "Soluciones" },
+    { href: "#tecnología", label: "Tecnología" },
+    { href: "#casos", label: "Casos" },
+    { href: "#contacto", label: "Contacto" },
+  ];
   const meetingUrl = whatsappUrl(WhatsAppMessages.meeting);
+
+  function renderLink(link: NavLink, onClick?: () => void) {
+    const className =
+      "text-sm text-[#9CA3AF] hover:text-white transition-colors duration-200";
+    const style = { fontFamily: "'Plus Jakarta Sans', sans-serif" };
+    if (link.isRoute) {
+      return (
+        <Link key={link.href} to={link.href} className={className} style={style} onClick={onClick}>
+          {link.label}
+        </Link>
+      );
+    }
+    return (
+      <a key={link.href} href={link.href} className={className} style={style} onClick={onClick}>
+        {link.label}
+      </a>
+    );
+  }
 
   return (
     <nav
@@ -39,24 +66,15 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <Link to="/" className="flex items-center gap-2.5 group">
           <BrandIcon size={30} />
           <span className="text-white font-bold tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             {AGENCIA_NAME}
           </span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-sm text-[#9CA3AF] hover:text-white transition-colors duration-200"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            >
-              {link}
-            </a>
-          ))}
+          {links.map((link) => renderLink(link))}
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -88,17 +106,7 @@ export function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden bg-[#0D0D0D]/95 backdrop-blur-xl border-b border-white/[0.06] px-6 py-4 flex flex-col gap-4">
-          {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-sm text-[#9CA3AF] hover:text-white transition-colors py-1"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link}
-            </a>
-          ))}
+          {links.map((link) => renderLink(link, () => setMenuOpen(false)))}
           <a
             href={meetingUrl}
             target="_blank"
