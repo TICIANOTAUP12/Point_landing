@@ -47,4 +47,9 @@ export default defineConfig({
   build: {
     target: ['es2020', 'safari14'],
   },
+  preview: {
+    host: '127.0.0.1',
+    // nginx proxies with Host: sistemataup.online
+    allowedHosts: ['sistemataup.online', '.sistemataup.online', 'localhost', '127.0.0.1'],
+  },
 })
