@@ -36,6 +36,9 @@ export const WhatsAppMessages = {
   pointSales:
     "Hola, me interesa Point Sales (sistema de caja y stock) de Agencia TA. Quisiera conocer combos, precios y cómo implementarlo en mi comercio.",
 
+  analizaNegocio:
+    "Hola, me interesa el análisis de negocio por $20.000 (Point Sales / Agencia TA). Quisiera analizar mi WhatsApp o canal de ventas y recibir el informe con consejos. ¿Cómo arrancamos?",
+
   diagnostic: (nombre: string, empresa: string, cuello: string): string =>
     [
       "Hola, soy " + nombre + (empresa ? ` de ${empresa}` : "") + ".",
