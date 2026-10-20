@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { HomePage } from "./pages/HomePage";
 import { FacturacionAfipPage } from "./pages/FacturacionAfipPage";
+import { AnalizaNegocioPage } from "./pages/AnalizaNegocioPage";
 import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
@@ -19,6 +20,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/facturacion-afip" element={<FacturacionAfipPage />} />
+          <Route path="/analiza-tu-negocio" element={<AnalizaNegocioPage />} />
           <Route path="/politica-de-privacidad" element={<PrivacyPolicyPage />} />
         </Routes>
       </BrowserRouter>

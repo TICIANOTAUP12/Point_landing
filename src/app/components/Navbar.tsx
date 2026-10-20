@@ -32,6 +32,7 @@ export function Navbar() {
 
   const links: NavLink[] = [
     { href: "/facturacion-afip", label: "AFIP / ARCA", isRoute: true },
+    { href: "/analiza-tu-negocio", label: "Analizá tu negocio", isRoute: true },
     { href: "#soluciones", label: "Soluciones" },
     { href: "#tecnología", label: "Tecnología" },
     { href: "#casos", label: "Casos" },
